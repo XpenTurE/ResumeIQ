@@ -8,7 +8,6 @@ import { analyzeResume } from './services/api'
 function App() {
 
   const [status, setStatus] = useState<"idle" | "loading" | "result">("idle")
-  const [file, setFile] = useState<File | null>(null)
   const [result, setResult] = useState<ResumeAnalysis | null>(null)
   const [error, setError] = useState<string | null>(null)
   async function handleAnalyze(file:File){
@@ -32,7 +31,6 @@ function App() {
   function onReset() {
     setStatus("idle")
     setResult(null)
-    setFile(null)
 }
 
   return (
